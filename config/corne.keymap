@@ -26,4 +26,34 @@
                         >;
                 };
         };
+                raised_layer {
+// ------------------------------------------------------------------
+// |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
+// |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |
+// |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  |
+//                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
+                        bindings = <
+   &none &kp EXCL &kp AT &kp HASH &kp DOLLAR &kp PERCENT   &kp PIPE2 &kp   &kp N7   &kp N8   &kp N9     &none
+   &none &kp PLUS &kp EQUAL &kp UNDERSCORE &kp MINUS &kp CARET   &kp N0 &kp N4  &kp N5     &kp N6   &kp DOT  &none
+   &none &none &none &kp QMARK &kp STAR &kp &   &kp SEMI &kp N1  &kp N2 &kp N3 &kp FSLH  &none
+        &kp LGUI &mo 1 &kp RET     &kp SPACE &mo 2 &kp RALT
+                        >;
+                };
+        };
+};
+
+/ {
+    combos {
+        compatible = "zmk,combos";
+        combo_grave {
+            timeout-ms = <50>;
+            key-positions = <1 2>;
+            bindings = <&kp GRAVE>;
+        };
+        combo_tilde {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp TILDE>;
+        };
+    };
 };
