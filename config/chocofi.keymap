@@ -52,9 +52,9 @@
     &none   &kp A     HRML(S,         D,         F)      &kp G          &kp H      HRMR(J,        K,          L)    &kp BSPC    &none
         //├──────────┼──────────┼──────────┼───────────┼──────────┤   ├──────────┼───────────┼──────────┼──────────┼──────────┤
         //│  Z       │  X       │  C       │  V        │  B       │   │  N       │  M        │ , <      │ . >      │ ENTER    │
-    &none   &kp Z      &kp X      &kp C      &kp V       &kp B          &kp N      &kp M       &kp COMMA  &kp DOT    &kp ENTER  &none
+    &none   &kp Z      &kp X      &kp C      &kp V       &kp B          &kp N      &kp M       &kp COMMA  &kp DOT   &kp ENTER   &none
         //╰──────────┴──────────┴──────────┼───────────┼──────────┤   ├──────────┼───────────┼──────────┴──────────┴──────────╯
-                                 &LGUI      &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TAB  &kp BSPC
+                                 &kp LGUI   &lt LEF ESC &kp LSHIFT     &kp SPACE  &lt RIG TAB  &kp BSPC
         //                      ╰──────────┴───────────┴──────────╯   ╰──────────┴───────────┴──────────╯
             >;
         };
@@ -71,7 +71,7 @@
         //│  Z        │  X        │  C        │  V        │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
     &none   &kp Z       &kp X       &kp C       &kp V       &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER  &none
         //╰───────────┴───────────┴───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &LGUI       &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TA  &kp BSPC
+                                   &kp LGUI    &lt LEF TAB  &kp LSHIFT    &kp SPACE  &lt RIG TA  &kp BSPC
         //                        ╰───────────┴───────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
