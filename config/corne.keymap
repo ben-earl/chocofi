@@ -9,11 +9,11 @@
 // Home row mods macro
 #define HRML(k2,k3,k4) &ht LALT k2  &ht LCTRL k3  &ht LGUI k4
 #define HRMR(k1,k2,k3) &ht RGUI k1  &ht RCTRL k2  &ht RALT k3
-#define WHRML(k2,k3,k4) &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
-#define WHRMR(k1,k2,k3) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3
+#define LHRML(k2,k3,k4) &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
+#define LHRMR(k1,k2,k3) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3
 
-#define MAC 0
-#define LIN 1
+#define LIN 0
+#define MAC 1
 #define RIG 2
 #define LEF 3
 #define TRI 4
@@ -40,9 +40,27 @@
         };
     };
 
+// Outside "&none" placement is because it is a 36 key corne, so the outside PCB was broken off. Need those there to match the shield
     keymap {
         compatible = "zmk,keymap";
+
         default_layer {
+            bindings = <
+        //╭───────────┬───────────┬───────────┬───────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
+        //│  Q        │  W        │  E        │  R        │  T       │   │  Y       │  U       │  I       │  O       │  P       │
+    &none   &kp Q       &kp W       &kp E       &kp R       &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &none
+        //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
+        //│  A        │  S        │  D        │  F        │  G       │   │  H       │  J       │  K       │  L       │SEMICOLON │
+    &none   &kp A      LHRML(S,       D,         F)         &kp G          &kp H      LHRMR(J,        K,         L)   &kp SEMI    &none
+        //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼────────────────────┼──────────┼──────────┤
+        //│  Z        │  X        │  C        │  V        │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
+    &none   &kp Z       &kp X       &kp C       &kp V       &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER  &none
+        //╰───────────┴───────────┴───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
+                                   &kp LSHIFT  &lt LEF ESC &kp BSPC       &kp SPACE  &lt RIG DEL  &kp TAB
+        //                        ╰───────────┴───────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+            >;
+        };
+        mac_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬───────────┬──────────╮   ╭──────────┬───────────┬──────────┬──────────┬──────────╮
         //│  Q       │  W       │  E       │  R        │  T       │   │  Y       │  U        │  I       │  O       │  P       │
@@ -54,39 +72,23 @@
         //│  Z       │  X       │  C       │  V        │  B       │   │  N       │  M        │ , <      │ . >      │ ENTER    │
     &none   &kp Z      &kp X      &kp C      &kp V       &kp B          &kp N      &kp M       &kp COMMA  &kp DOT   &kp ENTER   &none
         //╰──────────┴──────────┴──────────┼───────────┼──────────┤   ├──────────┼───────────┼──────────┴──────────┴──────────╯
-                                 &kp LSHIFT &lt LEF ESC &kp BSPC        &kp SPACE  &lt RIG DEL  &kp TAB 
+                                 &kp LSHIFT &lt LEF ESC &kp BSPC       &kp SPACE  &lt RIG DEL  &kp TAB 
         //                      ╰──────────┴───────────┴──────────╯   ╰──────────┴───────────┴──────────╯
             >;
         };
 
-        linux_layer {
-            bindings = <
-        //╭───────────┬───────────┬───────────┬───────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│  Q        │  W        │  E        │  R        │  T       │   │  Y       │  U       │  I       │  O       │  P       │
-    &none   &kp Q       &kp W       &kp E       &kp R       &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P      &none
-        //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  A        │  S        │  D        │  F        │  G       │   │  H       │  J       │  K       │  L       │SEMICOLON │
-    &none   &kp A      WHRML(S,       D,         F)         &kp G          &kp H      WHRMR(J,        K,         L)   &kp SEMI    &none
-        //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼────────────────────┼──────────┼──────────┤
-        //│  Z        │  X        │  C        │  V        │  B       │   │  N       │  M       │ , <      │ . >      │ ENTER    │
-    &none   &kp Z       &kp X       &kp C       &kp V       &kp B          &kp N      &kp M      &kp COMMA  &kp DOT    &kp ENTER  &none
-        //╰───────────┴───────────┴───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                   &kp LSHIFT    &lt LEF ESC &kp BSPC     &kp SPACE  &lt RIG RCTRL  &kp TAB
-        //                        ╰───────────┴───────────┴──────────╯   ╰──────────┴──────────┴──────────╯
-            >;
-        };
 
         right_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮   ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│ 1        │  2       │  3       │  4       │  5       │   │ 6        │ 7        │ 8        │ 9        │   0      │
-    &none   &kp N1    &kp N2     &kp N3     &kp N4     &kp N5          &kp N6     &kp N7     &kp N8     &kp N9      &kp N0    &none
+        //│          │  7       │  8       │  9       │  0       │   │          │          │          │          │          │
+    &none   &trans    &kp N2     &kp N3     &kp N4     &kp N5          &none      &none      &none      &none       &none      &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│ DELETE   │ CapsLock │ PrintSc  │  INSERT  │          |   |          │ LEFT     │ DOWN     │ UP       │ RIGHT    │
-    &none   &kp DEL   &kp CAPS   &kp PSCRN  &kp INS     &trans          &trans    &kp LARW   &kp DARW   &kp UARW   &kp RARW   &none
+        //│ DELETE   │ 4        │ 5        │  6       │          |   |  LEFT    │ DOWN     │ UP       │ RIGHT    │          │
+    &none   &kp DEL   &kp N4      &kp N5     &kp N6     &kp EQUAL       &kp LARW  &kp DARW   &kp UARW   &kp RARW   &none    &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┼──────────┼──────────┤
         //│          │          │          │          │          │   │          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │
-    &none   &trans    &trans     &trans     &trans      &trans         &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
+    &none   &trans    &kp N1     &kp N2     &kp N3      &kp DOT         &trans     &kp HOME   &kp PG_DN  &kp PG_UP  &kp END    &none
         //╰──────────┴──────────┴──────────┼──────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴──────────╯
                                   &trans     &trans     &kp ESC        &trans     &trans    &trans
         //                      ╰──────────┴──────────┴──────────╯   ╰──────────┴──────────┴──────────╯
@@ -114,7 +116,7 @@
             bindings = <
         //╭──────────┬──────────┬──────────┬───────────┬────────────╮   ╭────────────┬────────────┬──────────┬───────────┬──────────╮
         //│  F1      │  F2      │  F3      │  F4       │ PROFILE 0  │   │ PROFILE 2  │ TOGGLEOUT  │ LINUX    │ VOL MUTE  │ NEXTSONG │
-    &none   &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG &tog LIN  &kp C_MUTE  &kp C_NEXT  &none
+    &none   &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG &tog MAC  &kp C_MUTE  &kp C_NEXT  &none
         //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼───────────┼──────────┤
         //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │          │  VOL UP   │PAUSEMUSIC│
     &none   &kp F5     &kp F6     &kp F7     &kp F8     &bt BT_SEL 1     &bt BT_SEL 3  &kp C_BRI_UP  &trans   &kp C_VOL_UP  &kp C_PP  &none
