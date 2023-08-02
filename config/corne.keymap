@@ -78,8 +78,8 @@
         left_layer {
             bindings = <
         //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮   
-        //│  !       │  @       │  #       │  $       │  %       │  │  ^       │ &        │ *        │          │          │ 
-    &none  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS  &kp ASTRK   &none       &none     &none
+        //│          │  !       │  @       │  #       │  $       │  │  %       │ ^        │ &        │ *        │         │ 
+    &none  &none      &kp EXCL   &kp AT     &kp HASH   &kp DLLR       &kp PRCNT      &kp CARET  &kp AMPS  &kp ASTRK   &none  &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤   
         //|          │ LEFT     │  DOWN    │ UP       │  RIGHT   │  │  "       │  [       │  {       │  (       │          │   
     &none  &none      &kp LARW    &kp DARW   &kp UARW   &kp RARW      &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR   &trans     &none
