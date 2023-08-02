@@ -37,6 +37,30 @@
         };
     };
 
+    combos {
+      compatible = "zmk,combos";
+      combo_lbrc {
+        timeout-ms: <50>;
+        key-positions = <15 16>;
+        bindings = <&kp LBRC>;
+      };
+      combo_rbrc {
+        timeout-ms: <50>;
+        key-positions = <20 21>;
+        bindings = <&kp RBRC>;
+      };
+      combo_lbkt {
+        timeout-ms: <50>;
+        key-positions = <16 17>;
+        bindings = <&kp LBKT>;
+      };
+      combo_rbkt {
+        timeout-ms: <50>;
+        key-positions = <21 22>;
+        bindings = <&kp RBKT>;
+      };
+    };
+
 // Outside "&none" placement is because it is a 36 key corne, so the outside PCB was broken off. Need those there to match the shield
     keymap {
         compatible = "zmk,keymap";
