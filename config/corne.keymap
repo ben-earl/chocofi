@@ -81,8 +81,8 @@
         //│  !       │  @       │  #       │  $       │  %       │  │  ^       │ &        │ *        │          │          │ 
     &none  &kp EXCL   &kp AT     &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS  &kp ASTRK   &none       &none     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤   
-        //|  LEFT    │ DOWN     │ UP       │ RIGHT    │          │  │  "       │  [       │  {       │  (       │          │   
-    &none  &kp LARW    &kp DARW   &kp UARW   &kp RARW   &none         &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR   &trans     &none
+        //|          │ LEFT     │  DOWN    │ UP       │  RIGHT   │  │  "       │  [       │  {       │  (       │          │   
+    &none  &none      &kp LARW    &kp DARW   &kp UARW   &kp RARW      &kp DQT    &kp LBKT   &kp LBRC   &kp LPAR   &trans     &none
         //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤   
         //│          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  │  '       │  ]       │  }       │  )       │          │   
     &none  &none      &kp HOME   &kp PG_DN  &kp PG_UP  &kp END        &kp SQT    &kp RBKT   &kp RBRC   &kp RPAR   &trans     &none
