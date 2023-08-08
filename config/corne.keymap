@@ -71,6 +71,11 @@
         key-positions = <32 33>;
         bindings = <&kp RPAR>;
       };
+      combo_lctrl {
+        timeout-ms = <50>;
+        key-positions = <16 19>;
+        bindings = <&kp LCTRL>;
+      };
     };
 
 // Outside "&none" placement is because it is a 36 key corne, so the outside PCB was broken off. Need those there to match the shield
