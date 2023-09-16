@@ -30,6 +30,7 @@
         tap_super_enter: tap_super_enter {
             compatible = "zmk,behavior-key-press-tap";
             label = "TAP_SUPER_ENTER";
+            #binding-cells = <0>
             bindings = <&kp LGUI &kp RET>;
         };
     };
