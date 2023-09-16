@@ -27,6 +27,11 @@
             global-quick-tap;
             bindings = <&kp>, <&kp>;
         };
+        tap_super_enter: tap_super_enter {
+            compatible = "zmk,behavior-key-press-tap";
+            label = "TAP_SUPER_ENTER";
+            bindings = <&kp LGUI &kp RET>;
+        };
     };
 
     conditional_layers {
@@ -36,13 +41,6 @@
             then-layer = <TRI>;
         };
     };
-
-behavior_tap_super_enter {
-    compatible = "zmk,behavior-key-press-tap";
-    label = "TAP_SUPER_ENTER";
-    #binding-cells = <0>;
-    bindings = <&kp LGUI &kp RET>;
-};
 
 //    combos {
 //      compatible = "zmk,combos";
