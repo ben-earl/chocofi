@@ -92,7 +92,7 @@
     //24  │  Z        │  X        │  C        │  V        │  B       │   │  N       │  M       │  ,       │ .         │ /        │
     &none   &mt LSHIFT Z  &kp X       &kp C       &kp V       &kp B          &kp N      &kp M      &kp COMMA  &kp DOT  &mt RSHIFT FSLH   &none
         //╰───────────┴───────────┴───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴───────────╯
-                                &lt LCTRL LGUI &lt LEF ESC  &lt LALT BSPC  &lt RALT SPC &lt RIG ENTER  &lt RCTRL TAB
+                                &mt LCTRL LGUI &lt LEF ESC  &mt LALT BSPC  &mt RALT SPC &lt RIG ENTER  &mt RCTRL TAB
         //                        ╰───────────┴───────────┴──────────╯   ╰──────────┴──────────┴──────────╯
             >;
         };
