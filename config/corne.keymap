@@ -46,7 +46,7 @@
 
         to_default {
             bindings = <&tog 0>;
-            key-positions = <25 37 40 34>;
+            key-positions = <25 34 37 40>;
             layers = <4>;
         };
     };
@@ -106,7 +106,7 @@
                                           &trans          &trans              &trans    &trans  &trans               &trans
             >;
 
-            label = "colmak-dh";
+            label = "colmak";
         };
     };
 };
