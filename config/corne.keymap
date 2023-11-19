@@ -14,7 +14,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
-            quick-tap-ms = <175>;
+            quick-tap-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -35,13 +35,13 @@
 
         to_cdh {
             bindings = <&to 4>;
-            key-positions = <25 34 37 40>;
+            key-positions = <25 34 33 26>;
             layers = <0>;
         };
 
         to_qwerty {
             bindings = <&to 0>;
-            key-positions = <25 34 37 40>;
+            key-positions = <25 34 26 33>;
             layers = <4>;
         };
     };
