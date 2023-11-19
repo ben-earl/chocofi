@@ -61,6 +61,8 @@
 &none  &kp Z             &kp X           &kp C            &kp V               &kp B       &kp N      &kp M                &kp COMMA        &kp DOT          &mt RSHIFT FSLH            &none
                                          &kp LGUI         &lt LEF ESC         &kp BSPC    &kp SPACE  &lt RIG ENTER        &kp TAB
             >;
+
+            label = "qwerty";
         };
 
         right_layer {
@@ -104,7 +106,7 @@
                                           &trans          &trans              &trans    &trans  &trans               &trans
             >;
 
-            label = "cdh";
+            label = "colmak-dh";
         };
     };
 };
