@@ -2,8 +2,8 @@
 // SPDX-License-Identifier: MIT
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
+#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
 
 #define LIN 0
@@ -27,90 +27,86 @@
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
+
         tri_layer {
-            if-layers = <RIG LEF>;
-            then-layer = <TRI>;
+            if-layers = <1>;
+            then-layer = <2>;
         };
     };
 
+    // Outside "&none" placement is because it is a 36 key corne, so the outside PCB was broken off. Need those there to match the shield
 
-// Outside "&none" placement is because it is a 36 key corne, so the outside PCB was broken off. Need those there to match the shield
+    combos {
+        compatible = "zmk,combos";
+
+        to_cdh {
+            bindings = <&tog 4>;
+            key-positions = <25 34 37 40>;
+            layers = <0>;
+        };
+
+        to_default {
+            bindings = <&tog 0>;
+            key-positions = <25 37 40 34>;
+            layers = <4>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
         default_layer {
             bindings = <
-        //╭───────────┬───────────┬───────────┬───────────┬──────────╮   ╭──────────┬──────────┬──────────┬───────────┬──────────╮
-    //0   │  Q        │  W        │  E        │  R        │  T       │   │  Y       │  U       │  I       │  O        │  P       │
-    &none   &kp Q       &kp W       &kp E       &kp R       &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P       &none
-        //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┼───────────┼──────────┤
-    //12  │  A        │  S        │  D        │  F        │  G       │   │  H       │  J       │  K       │  L        │SEMICOLON │
-     &none   &kp A       &kp S       &kp D        &kp F      &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI    &none
-        //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┼───────────┼──────────┤
-    //24  │  Z        │  X        │  C        │  V        │  B       │   │  N       │  M       │  ,       │ .         │ /        │
-    &none   &mt LSHIFT Z  &kp X       &kp C       &kp V       &kp B          &kp N      &kp M      &kp COMMA  &kp DOT  &mt RSHIFT FSLH   &none
-        //╰───────────┴───────────┴───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┴──────────┴───────────╯
-                                   &kp LGUI    &lt LEF ESC  &kp BSPC      &kp SPC    &lt RIG ENTER &mt RCTRL TAB
-        //                        ╰───────────┴───────────┴──────────╯   ╰──────────┴──────────┴──────────╯
+&none  &kp Q             &kp W           &kp E            &kp R               &kp T       &kp Y      &kp U                &kp I            &kp O            &kp P                      &none
+&none  &ht LEFT_SHIFT A  &ht LEFT_ALT S  &ht LEFT_META D  &ht LEFT_CONTROL F  &kp G       &kp H      &ht RIGHT_CONTROL J  &ht RIGHT_GUI K  &ht RIGHT_ALT L  &ht RIGHT_SHIFT SEMICOLON  &none
+&none  &kp Z             &kp X           &kp C            &kp V               &kp B       &kp N      &kp M                &kp COMMA        &kp DOT          &mt RSHIFT FSLH            &none
+                                         &kp LGUI         &lt LEF ESC         &kp BSPC    &kp SPACE  &lt RIG ENTER        &kp TAB
             >;
         };
 
         right_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮ ╭──────────┬──────────┬──────────┬──────────┬──────────╮
-        //│   ~      │   `      │          │  LEFT    │  RIGHT   │ │ DOWN     │  UP      │          │          │          │
-    &none   &kp TILDE &kp GRAVE   &none      &kp LARW   &kp RARW     &kp DARW   &kp UARW   &none     &none       &none      &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  1       │  2       │  3       │     4    │  5       │ │ 6        │  7       │ 8        │  9       │  0       │
-    &none   &kp N1    &kp N2      &kp N3     &kp N4     &kp N5       &kp N6    &kp N7     &kp N8     &kp N9     &kp N0      &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┼──────────┼──────────┤
-        //│  \       │          │          │          │          │ │ =        │  _       │ [        │  ]       │          │
-    &none   &kp BSLH   &none      &none      &none      &none       &kp EQUAL   &kp UNDER  &kp LBKT   &kp RBKT   &none      &none
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤ ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                  &trans     &trans     &trans       &trans     &trans     &trans
-        //                      ╰──────────┴──────────┴──────────╯ ╰──────────┴──────────┴──────────╯
+&none  &kp TILDE  &kp GRAVE  &none   &kp LARW  &kp RARW    &kp DARW   &kp UARW   &none     &none     &none   &none
+&none  &kp N1     &kp N2     &kp N3  &kp N4    &kp N5      &kp N6     &kp N7     &kp N8    &kp N9    &kp N0  &none
+&none  &kp BSLH   &none      &none   &none     &none       &kp EQUAL  &kp UNDER  &kp LBKT  &kp RBKT  &none   &none
+                             &trans  &trans    &trans      &trans     &trans     &trans
             >;
         };
 
         left_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬──────────┬──────────╮  ╭──────────┬──────────┬──────────┬──────────┬──────────╮   
-        //│          │          │          │          │          │  │  '       │   "      │          │          │   |      │ 
-    &none  &none      &none      &none       &none      &none         &kp SQT    &kp DQT   &none       &none      &kp PIPE   &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤   
-        //|  !       │ @        │  #       │ $        │  %       │  │  ^       │  &       │  *       │  (       │   )      │   
-    &none  &kp EXCL    &kp AT    &kp HASH   &kp DLLR   &kp PRCNT      &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR   &kp RPAR   &none
-        //├──────────┼──────────┼──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┼──────────┼──────────┤   
-        //│          │ HOME     │ PAGE DN  │ PAGE UP  │ END      │  │  +       │  -       │  {       │  }       │          │   
-    &none  &kp LALT   &kp HOME   &kp PG_DN   &kp PG_UP  &kp END       &kp PLUS   &kp MINUS  &kp LBRC   &kp RBRC   &kp RALT   &none
-        //╰──────────┴──────────┴──────────┼──────────┼──────────┤  ├──────────┼──────────┼──────────┴──────────┴──────────╯
-                                 &trans       &trans     &trans       &trans     &trans     &trans
-        //                      ╰──────────┴──────────┴──────────╯  ╰──────────┴──────────┴──────────╯
+&none  &none     &none     &none      &none      &none        &kp SQT    &kp DQT    &none      &none     &kp PIPE  &none
+&none  &kp EXCL  &kp AT    &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &none
+&none  &kp LALT  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END      &kp PLUS   &kp MINUS  &kp LBRC   &kp RBRC  &kp RALT  &none
+                           &trans     &trans     &trans       &trans     &trans     &trans
             >;
         };
 
         tri_layer {
             bindings = <
-        //╭──────────┬──────────┬──────────┬───────────┬────────────╮   ╭────────────┬────────────┬──────────┬─────────────┬──────────╮
-        //│  F1      │  F2      │  F3      │  F4       │ PROFILE 0  │   │ PROFILE 2  │ TOGGLEOUT  │          │ VOL MUTE    │ NEXTSONG │
-    &none   &kp F1     &kp F2     &kp F3     &kp F4     &bt BT_SEL 0     &bt BT_SEL 2  &out OUT_TOG  &none    &kp C_MUTE    &kp C_NEXT  &none
-        //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼─────────────┼──────────┤
-        //│  F5      │  F6      │  F7      │  F8       │ PROFILE 1  │   │ PROFILE 3  │ INC BRIGHT │          │  VOL UP     │PAUSEMUSIC│
-    &none   &kp F5     &kp F6     &kp F7     &kp F8     &bt BT_SEL 1     &bt BT_SEL 3  &kp C_BRI_UP &kp LG(RET) &kp C_VOL_UP    &kp C_PP  &none
-        //├──────────┼──────────┼──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┼─────────────┼──────────┤
-        //│  F9      │  F10     │  F11     │  F12      │  CLEAR BT  │   │ PROFILE 4  │ DEC BRIGHT │          │  VOL DOWN   │ PREVSONG │
-    &none   &kp F9     &kp F10    &kp F11    &kp F12     &bt BT_CLR      &bt BT_SEL 4 &kp C_BRI_DEC  &none    &kp C_VOL_DN   &kp C_PREV &none
-        //╰──────────┴──────────┴──────────┼───────────┼────────────┤   ├────────────┼────────────┼──────────┴─────────────┴──────────╯
-                                   &trans      &trans     &trans         &trans       &trans        &trans
-        //                      ╰──────────┴────────────┴──────────╯   ╰─────────────┴────────────┴──────────╯
+&none  &kp F1  &kp F2   &kp F3   &kp F4   &bt BT_SEL 0    &bt BT_SEL 2  &out OUT_TOG   &none        &kp C_MUTE    &kp C_NEXT  &none
+&none  &kp F5  &kp F6   &kp F7   &kp F8   &bt BT_SEL 1    &bt BT_SEL 3  &kp C_BRI_UP   &kp LG(RET)  &kp C_VOL_UP  &kp C_PP    &none
+&none  &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR      &bt BT_SEL 4  &kp C_BRI_DEC  &none        &kp C_VOL_DN  &kp C_PREV  &none
+                        &trans   &trans   &trans          &trans        &trans         &trans
             >;
+        };
+
+        colmak-dh {
+            bindings = <
+&none   &kp Q             &kp W           &kp F           &kp P               &kp B       &kp J      &kp L                &kp U            &kp Y           &kp SEMI           &none
+&none   &ht LEFT_SHIFT A  &ht LEFT_ALT R  &ht LEFT_GUI S  &ht LEFT_CONTROL T  &kp G       &kp M      &ht RIGHT_CONTROL N  &ht RIGHT_GUI E  &ht LEFT_ALT I  &ht RIGHT_SHIFT O  &none
+&trans  &kp Z             &kp X           &kp C           &kp V               &kp D       &kp K      &kp H                &kp COMMA        &kp DOT         &kp FSLH           &none
+                                          &kp LGUI        &kp ESC             &kp BSPC    &kp SPACE  &kp ENTER            &kp TAB
+            >;
+
+            label = "cdh";
         };
     };
 };
 
 / {
     chosen {
-      zmk,battery = &vbatt;
+        zmk,battery = &vbatt;
     };
 
     vbatt: vbatt {
