@@ -100,10 +100,10 @@
 
         colmak-dh {
             bindings = <
-&none   &kp Q             &kp W           &kp F           &kp P               &kp B     &kp J   &kp L                &kp U            &kp Y           &kp SEMI           &none
-&none   &ht LEFT_SHIFT A  &ht LEFT_ALT R  &ht LEFT_GUI S  &ht LEFT_CONTROL T  &kp G     &kp M   &ht RIGHT_CONTROL N  &ht RIGHT_GUI E  &ht LEFT_ALT I  &ht RIGHT_SHIFT O  &none
-&trans  &kp Z             &kp X           &kp C           &kp D               &kp V     &kp K   &kp H                &kp COMMA        &kp DOT         &kp FSLH           &none
-                                          &trans          &lt 2 ESCAPE        &trans    &trans  &lt 1 ENTER          &trans
+&none  &kp Q             &kp W           &kp F           &kp P               &kp B     &kp J   &kp L                &kp U            &kp Y           &kp SEMI           &none
+&none  &ht LEFT_SHIFT A  &ht LEFT_ALT R  &ht LEFT_GUI S  &ht LEFT_CONTROL T  &kp G     &kp M   &ht RIGHT_CONTROL N  &ht RIGHT_GUI E  &ht LEFT_ALT I  &ht RIGHT_SHIFT O  &none
+&none  &kp Z             &kp X           &kp C           &kp D               &kp V     &kp K   &kp H                &kp COMMA        &kp DOT         &kp FSLH           &none
+                                         &trans          &lt 2 ESCAPE        &trans    &trans  &lt 1 ENTER          &trans
             >;
 
             label = "colmak";
