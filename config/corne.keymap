@@ -39,14 +39,14 @@
         compatible = "zmk,combos";
 
         to_cdh {
-            bindings = <&tog 4>;
+            bindings = <&to 4>;
             key-positions = <25 34 37 40>;
             layers = <0>;
         };
 
-        to_default {
-            bindings = <&tog 0>;
-            key-positions = <25 34 26 33>;
+        to_qwerty {
+            bindings = <&to 0>;
+            key-positions = <25 34 37 40>;
             layers = <4>;
         };
     };
