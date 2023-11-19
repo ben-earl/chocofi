@@ -6,10 +6,6 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/outputs.h>
 
-// Home row mods macro
-#define LHRML(k2,k3,k4) &ht LALT k2  &ht LGUI k3  &ht LCTRL k4
-#define LHRMR(k1,k2,k3) &ht RCTRL k1  &ht RGUI k2  &ht RALT k3
-
 #define LIN 0
 #define RIG 1
 #define LEF 2
@@ -49,8 +45,7 @@
     &none   &kp Q       &kp W       &kp E       &kp R       &kp T          &kp Y      &kp U      &kp I      &kp O      &kp P       &none
         //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┼───────────┼──────────┤
     //12  │  A        │  S        │  D        │  F        │  G       │   │  H       │  J       │  K       │  L        │SEMICOLON │
-    // &none   &kp A       &kp S       &kp D        &kp F      &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI    &none
-    &none   &kp A       LHRML(S,      D,        F)           &kp G          &kp H      LHRMR(J,    K,        L)        &kp SEMI    &none
+     &none   &kp A       &kp S       &kp D        &kp F      &kp G          &kp H      &kp J       &kp K      &kp L     &kp SEMI    &none
         //├───────────┼───────────┼───────────┼───────────┼──────────┤   ├──────────┼──────────┼──────────┼───────────┼──────────┤
     //24  │  Z        │  X        │  C        │  V        │  B       │   │  N       │  M       │  ,       │ .         │ /        │
     &none   &mt LSHIFT Z  &kp X       &kp C       &kp V       &kp B          &kp N      &kp M      &kp COMMA  &kp DOT  &mt RSHIFT FSLH   &none
