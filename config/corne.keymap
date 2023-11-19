@@ -19,8 +19,7 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <220>;
-            quick-tap-ms = <150>;
-            global-quick-tap;
+            quick-tap-ms = <175>;
             bindings = <&kp>, <&kp>;
         };
     };
@@ -66,20 +65,24 @@
 
         right_layer {
             bindings = <
-&none  &kp TILDE  &kp GRAVE  &none   &kp LARW  &kp RARW    &kp DARW   &kp UARW   &none     &none     &none   &none
-&none  &kp N1     &kp N2     &kp N3  &kp N4    &kp N5      &kp N6     &kp N7     &kp N8    &kp N9    &kp N0  &none
-&none  &kp BSLH   &none      &none   &none     &none       &kp EQUAL  &kp UNDER  &kp LBKT  &kp RBKT  &none   &none
-                             &trans  &trans    &trans      &trans     &trans     &trans
+&none  &kp TILDE  &kp GRAVE  &none   &none   &none     &none      &none      &none     &none     &none   &none
+&none  &kp N1     &kp N2     &kp N3  &kp N4  &kp N5    &kp N6     &kp N7     &kp N8    &kp N9    &kp N0  &none
+&none  &kp BSLH   &none      &none   &none   &none     &kp EQUAL  &kp UNDER  &kp LBKT  &kp RBKT  &none   &none
+                             &trans  &trans  &trans    &trans     &trans     &trans
             >;
+
+            label = "numbers";
         };
 
         left_layer {
             bindings = <
 &none  &none     &none     &none      &none      &none        &kp SQT    &kp DQT    &none      &none     &kp PIPE  &none
 &none  &kp EXCL  &kp AT    &kp HASH   &kp DLLR   &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &none
-&none  &kp LALT  &kp HOME  &kp PG_DN  &kp PG_UP  &kp END      &kp PLUS   &kp MINUS  &kp LBRC   &kp RBRC  &kp RALT  &none
+&none  &none     &kp HOME  &kp PG_DN  &kp PG_UP  &kp END      &kp PLUS   &kp MINUS  &kp LBRC   &kp RBRC  &none     &none
                            &trans     &trans     &trans       &trans     &trans     &trans
             >;
+
+            label = "symbols";
         };
 
         tri_layer {
@@ -89,14 +92,16 @@
 &none  &kp F9  &kp F10  &kp F11  &kp F12  &bt BT_CLR      &bt BT_SEL 4  &kp C_BRI_DEC  &none        &kp C_VOL_DN  &kp C_PREV  &none
                         &trans   &trans   &trans          &trans        &trans         &trans
             >;
+
+            label = "system";
         };
 
         colmak-dh {
             bindings = <
-&none   &kp Q             &kp W           &kp F           &kp P               &kp B       &kp J      &kp L                &kp U            &kp Y           &kp SEMI           &none
-&none   &ht LEFT_SHIFT A  &ht LEFT_ALT R  &ht LEFT_GUI S  &ht LEFT_CONTROL T  &kp G       &kp M      &ht RIGHT_CONTROL N  &ht RIGHT_GUI E  &ht LEFT_ALT I  &ht RIGHT_SHIFT O  &none
-&trans  &kp Z             &kp X           &kp C           &kp V               &kp D       &kp K      &kp H                &kp COMMA        &kp DOT         &kp FSLH           &none
-                                          &kp LGUI        &kp ESC             &kp BSPC    &kp SPACE  &kp ENTER            &kp TAB
+&none   &kp Q             &kp W           &kp F           &kp P               &kp B     &kp J   &kp L                &kp U            &kp Y           &kp SEMI           &none
+&none   &ht LEFT_SHIFT A  &ht LEFT_ALT R  &ht LEFT_GUI S  &ht LEFT_CONTROL T  &kp G     &kp M   &ht RIGHT_CONTROL N  &ht RIGHT_GUI E  &ht LEFT_ALT I  &ht RIGHT_SHIFT O  &none
+&trans  &kp Z             &kp X           &kp C           &kp V               &kp D     &kp K   &kp H                &kp COMMA        &kp DOT         &kp FSLH           &none
+                                          &trans          &trans              &trans    &trans  &trans               &trans
             >;
 
             label = "cdh";
