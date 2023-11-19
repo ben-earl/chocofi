@@ -46,7 +46,7 @@
 
         to_default {
             bindings = <&tog 0>;
-            key-positions = <25 34 37 40>;
+            key-positions = <25 34 26 33>;
             layers = <4>;
         };
     };
