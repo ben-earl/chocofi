@@ -61,9 +61,9 @@
 
         qwerty {
             bindings = <
-&none  &kp Q             &kp W           &kp E            &kp R               &kp T              &kp Y        &kp U                &kp I            &kp O            &kp P                      &none
-&none  &ht LEFT_SHIFT A  &ht LEFT_ALT S  &ht LEFT_META D  &ht LEFT_CONTROL F  &kp G              &kp H        &ht RIGHT_CONTROL J  &ht RIGHT_GUI K  &ht RIGHT_ALT L  &ht RIGHT_SHIFT SEMICOLON  &none
-&none  &kp Z             &kp X           &kp C            &kp V               &kp B              &kp N        &kp M                &kp COMMA        &kp DOT          &kp SLASH                  &none
+&none  &kp Q             &kp W           &kp E            &kp R               &kp T              &kp Y        &kp U                &kp I            &kp O            &kp P                         &none
+&none  &ht LEFT_SHIFT A  &ht LEFT_ALT S  &ht LEFT_META D  &ht LEFT_CONTROL F  &kp G              &kp H        &ht RIGHT_CONTROL J  &ht RIGHT_GUI K  &ht RIGHT_ALT L  &ht RIGHT_SHIFT SINGLE_QUOTE  &none
+&none  &kp Z             &kp X           &kp C            &kp V               &kp B              &kp N        &kp M                &kp COMMA        &kp DOT          &kp SLASH                     &none
                                          &kp LEFT_ALT     &lt 4 ESC           &lt 5 BACKSPACE    &lt 2 SPACE  &lt 1 ENTER          &kp TAB
             >;
 
